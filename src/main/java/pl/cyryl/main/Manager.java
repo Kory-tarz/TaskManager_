@@ -8,8 +8,8 @@ import static pl.cyryl.main.InputValidator.*;
 
 public class Manager {
 
-    StateManager stateManager;
-    List<Task> taskList;
+    private StateManager stateManager;
+    private List<Task> taskList;
 
     public Manager(){
         stateManager = new StateManager();
@@ -18,8 +18,8 @@ public class Manager {
 
     private List<Task> readLoadedData(List<String> lines){
         return lines.stream()
-                .map(line -> line.split(","))
-                .filter(elements -> elements.length > 3)
+                .map(line -> line.split(", "))
+                .filter(elements -> elements.length >= 3)
                 .map(elements -> new Task(elements[0], elements[1], elements[2]))
                 .filter( task-> isDescriptionValid()
                             .and(isDateValid())
@@ -38,7 +38,7 @@ public class Manager {
         taskList.remove(i);
     }
 
-    public void listTasks(){
+    public void printTasks(){
         IntStream.range(0, taskList.size())
                 .forEach(i-> System.out.println(i + ": " + taskList.get(i).toString()));
     }

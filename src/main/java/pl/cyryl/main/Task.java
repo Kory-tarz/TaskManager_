@@ -32,6 +32,6 @@ public class Task {
     public String toString() {
         return  description + " " +
                 dueDate + " " +
-                important;
+                (important.equalsIgnoreCase("true") ? "important" : "not important");
     }
 }
