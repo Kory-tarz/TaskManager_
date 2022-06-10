@@ -1,10 +1,14 @@
-package pl.cyryl.main;
+package pl.cyryl.managers;
+
+import pl.cyryl.colors.ConsoleColors;
+import pl.cyryl.enums.ValidationResult;
+import pl.cyryl.models.Task;
 
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import static pl.cyryl.main.InputValidator.*;
+import static pl.cyryl.interfaces.InputValidator.*;
 
 public class Manager {
 
@@ -41,10 +45,10 @@ public class Manager {
 
     public void printTasks(){
         IntStream.range(0, taskList.size())
-                .forEach(i-> System.out.println(i + ": " + taskList.get(i).toString()));
+                .forEach(i-> System.out.println(ConsoleColors.BLUE  + i + ": " + taskList.get(i).toString()));
     }
 
-    public void exit(){
+    public void close(){
         stateManager.saveOnExit(taskList);
     }
 }

@@ -1,4 +1,6 @@
-package pl.cyryl.main;
+package pl.cyryl.managers;
+
+import pl.cyryl.interfaces.Saveable;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -20,11 +22,11 @@ public class StateManager {
         this.saveFileName = saveFileName;
     }
 
-    public void saveTask(Task task){
+    public void saveTask(Saveable element){
         try (FileWriter fileWriter = new FileWriter(saveFileName, true)) {
-            fileWriter.append(task.saveToFile());
+            fileWriter.append(element.saveToFile());
         }catch (IOException exception){
-            logger.info("Error: saving task: " + task.toString());
+            logger.info("Error: saving task: " + element.toString());
         }
     }
 
@@ -41,7 +43,7 @@ public class StateManager {
         return new ArrayList<>();
     }
 
-    public void saveOnExit(List<Saveable> elements){
+    public void saveOnExit(List<? extends Saveable> elements){
         try(FileWriter fileWriter = new FileWriter(saveFileName, false)){
             for(Saveable element: elements){
                 fileWriter.append(element.saveToFile());
@@ -50,5 +52,4 @@ public class StateManager {
             logger.info("Error: saving tasks to file on exit");
         }
     }
-
 }

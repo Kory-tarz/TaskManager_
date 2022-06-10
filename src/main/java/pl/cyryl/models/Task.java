@@ -1,4 +1,6 @@
-package pl.cyryl.main;
+package pl.cyryl.models;
+
+import pl.cyryl.interfaces.Saveable;
 
 import java.util.function.BiConsumer;
 
@@ -15,13 +17,13 @@ public class Task implements Saveable {
     }
 
     public Task(String description, String date, String important){
-        this.description = description;
+        setDescription(description);
         dueDate = date;
         this.important = important;
     }
 
     private void setDescription(String description) {
-        this.description = description;
+        this.description = description.replaceAll(",", "");
     }
 
     private void setImportant(String important) {
@@ -32,10 +34,11 @@ public class Task implements Saveable {
         this.dueDate = dueDate;
     }
 
-    static BiConsumer<Task, String> setDescription = Task::setDescription;
-    static BiConsumer<Task, String> setDueDate = Task::setDueDate;
-    static BiConsumer<Task, String> setImportant = Task::setImportant;
+    public static BiConsumer<Task, String> setDescription = Task::setDescription;
 
+    public static BiConsumer<Task, String> setDueDate = Task::setDueDate;
+
+    public static BiConsumer<Task, String> setImportant = Task::setImportant;
 
     public String getDueDate() {
         return dueDate;

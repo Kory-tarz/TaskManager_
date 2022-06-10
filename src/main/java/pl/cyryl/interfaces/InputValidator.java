@@ -1,13 +1,14 @@
-package pl.cyryl.main;
+package pl.cyryl.interfaces;
 
 import org.apache.commons.lang3.StringUtils;
+import pl.cyryl.models.Task;
+import pl.cyryl.enums.ValidationResult;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.function.Function;
 
-import static pl.cyryl.main.InputValidator.*;
-import static pl.cyryl.main.InputValidator.ValidationResult.*;
+import static pl.cyryl.enums.ValidationResult.*;
 
 public interface InputValidator extends Function<Task, ValidationResult> {
 
@@ -37,13 +38,5 @@ public interface InputValidator extends Function<Task, ValidationResult> {
             ValidationResult result = this.apply(task);
             return result.equals(SUCCESS) ? other.apply(task) : result;
         };
-    }
-
-    enum ValidationResult{
-        SUCCESS,
-        EMPTY_DESCRIPTION,
-        INVALID_DATE_FORMAT,
-        DATE_IN_THE_PAST,
-        INVALID_IMPORTANCE
     }
 }

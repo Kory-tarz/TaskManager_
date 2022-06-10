@@ -1,15 +1,14 @@
-package pl.cyryl.main;
+package pl.cyryl.managers;
 
 import pl.cyryl.colors.ConsoleColors;
+import pl.cyryl.enums.ValidationResult;
+import pl.cyryl.models.Task;
 
 import java.util.Scanner;
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 import java.util.function.Function;
-import java.util.function.Predicate;
 
-import static pl.cyryl.main.InputValidator.*;
-import static pl.cyryl.main.InputValidator.ValidationResult.*;
+import static pl.cyryl.interfaces.InputValidator.*;
 
 public class InputManager {
 
@@ -23,32 +22,31 @@ public class InputManager {
 
     public Task readNewTask() {
         Task newTask = new Task();
-        String message = "Enter task description: ";
+        String message = ConsoleColors.YELLOW + "Enter task description: ";
         readAndValidate(newTask, message, Task.setDescription, isDescriptionValid());
-        message = "Enter date in format YYYY-MM-DD:";
+        message = ConsoleColors.YELLOW + "Enter date in format YYYY-MM-DD:";
         readAndValidate(newTask, message, Task.setDueDate, isDateValid());
-        message = "Is this task important? Enter true/false: ";
+        message = ConsoleColors.YELLOW + "Is this task important? Enter true/false: ";
         readAndValidate(newTask, message, Task.setImportant, isImportanceValid());
         return newTask;
     }
 
-    private void readAndValidate(Task currentTask, String messageForUser, BiConsumer<Task, String> set, Function<Task, InputValidator.ValidationResult> validation){
+    private void readAndValidate(Task currentTask, String messageForUser, BiConsumer<Task, String> set, Function<Task, ValidationResult> validation){
         String input;
-        InputValidator.ValidationResult result;
+        ValidationResult result;
         do{
             System.out.println(messageForUser);
             input = scanner.nextLine();
             set.accept(currentTask, input);
             result = validation.apply(currentTask);
-            if (result != SUCCESS) {
-                System.out.println("Error: " + result);
+            if (result != ValidationResult.SUCCESS) {
+                System.out.println(ConsoleColors.RED_BOLD + "Error: " + result);
             }
-        }while (result != SUCCESS);
+        }while (result != ValidationResult.SUCCESS);
     }
 
-
     public int readIdToRemove() {
-        System.out.println("Enter id to remove a task: ");
+        System.out.println(ConsoleColors.RED + "Enter id to remove a task: ");
         while (!scanner.hasNextInt()){
             scanner.nextLine();
         }
@@ -62,11 +60,11 @@ public class InputManager {
     }
 
     public void printCommands(){
-        System.out.println(ConsoleColors.GREEN_UNDERLINED + "Select an option: ");
-        System.out.println(ConsoleColors.YELLOW_BOLD + "add");
-        System.out.println(ConsoleColors.RED_BOLD + "remove");
-        System.out.println(ConsoleColors.WHITE_BOLD + "list");
-        System.out.println(ConsoleColors.BLUE + "quit");
+        System.out.println(ConsoleColors.GREEN_UNDERLINED + "Select an option:");
+        System.out.println(ConsoleColors.YELLOW+ "add");
+        System.out.println(ConsoleColors.RED + "remove");
+        System.out.println(ConsoleColors.BLUE + "list");
+        System.out.println(ConsoleColors.PURPLE + "quit");
     }
 
     public String readInput(){
@@ -74,10 +72,11 @@ public class InputManager {
             throw new RuntimeException("Trying to read input after quiting");
 
         String input = scanner.nextLine().trim();
-        if(input.equalsIgnoreCase("quit")) {
-            quitting = true;
-            scanner.close();
-        }
         return input;
+    }
+
+    public void close(){
+        scanner.close();
+        quitting = true;
     }
 }

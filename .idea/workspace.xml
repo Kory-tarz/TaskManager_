@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f705d118-cb56-4ebf-8a38-9d2cc94c36ad" name="Changes" comment="Program is working as intended. TODO: fix colors on display, make StateManager more general">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/colors/ConsoleColors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/Saveable.java" afterDir="false" />
+    <list default="true" id="f705d118-cb56-4ebf-8a38-9d2cc94c36ad" name="Changes" comment="small fixes. Saveable inteface">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/enums/ValidationResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/StateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/StateManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/controller/AppController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/InputManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/managers/InputManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/InputValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/interfaces/InputValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/managers/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/Saveable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/interfaces/Saveable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/StateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/managers/StateManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/models/Task.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +26,7 @@
       <list>
         <option value="Class" />
         <option value="Interface" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -36,25 +42,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="pl.cyryl.main.ValidationResult" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="pl.cyryl.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pl.cyryl.main.Main" />
       <module name="TaskManager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pl.cyryl.main.*" />
+          <option name="PATTERN" value="pl.cyryl.interfaces.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -64,7 +75,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.pl.cyryl.main.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -76,7 +87,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654796815932</updated>
-      <workItem from="1654796818134" duration="23325000" />
+      <workItem from="1654796818134" duration="24281000" />
+      <workItem from="1654858507215" duration="3591000" />
     </task>
     <task id="LOCAL-00001" summary="Input Validation, File management, TaskList containment">
       <created>1654809868609</created>
@@ -99,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654843120008</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="small fixes. Saveable inteface">
+      <created>1654844725625</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654844725625</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +139,7 @@
     <MESSAGE value="Input Validation, File management, TaskList containment" />
     <MESSAGE value="Working on reading input" />
     <MESSAGE value="Program is working as intended. TODO: fix colors on display, make StateManager more general" />
-    <option name="LAST_COMMIT_MESSAGE" value="Program is working as intended. TODO: fix colors on display, make StateManager more general" />
+    <MESSAGE value="small fixes. Saveable inteface" />
+    <option name="LAST_COMMIT_MESSAGE" value="small fixes. Saveable inteface" />
   </component>
 </project>
