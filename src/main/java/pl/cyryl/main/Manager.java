@@ -10,9 +10,10 @@ public class Manager {
 
     private StateManager stateManager;
     private List<Task> taskList;
+    private final String saveFileName = "tasks.csv";
 
     public Manager(){
-        stateManager = new StateManager();
+        stateManager = new StateManager(saveFileName);
         taskList = readLoadedData(stateManager.loadLinesFromSavedState());
     }
 

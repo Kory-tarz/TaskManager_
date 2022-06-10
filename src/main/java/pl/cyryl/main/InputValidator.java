@@ -19,7 +19,7 @@ public interface InputValidator extends Function<Task, ValidationResult> {
         return task -> {
             try {
                 LocalDate date = LocalDate.parse(task.getDueDate());
-                return date.compareTo(LocalDate.now()) > 0 ? SUCCESS : DATE_IN_THE_PAST;
+                return date.compareTo(LocalDate.now()) >= 0 ? SUCCESS : DATE_IN_THE_PAST;
             } catch (DateTimeParseException e) {
                 return INVALID_DATE_FORMAT;
             }

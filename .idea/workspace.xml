@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f705d118-cb56-4ebf-8a38-9d2cc94c36ad" name="Changes" comment="Input Validation, File management, TaskList containment">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/InputManager.java" afterDir="false" />
+    <list default="true" id="f705d118-cb56-4ebf-8a38-9d2cc94c36ad" name="Changes" comment="Working on reading input">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/AppController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/InputManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/InputManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/InputValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/InputValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/StateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/StateManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/Task.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +79,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654796815932</updated>
-      <workItem from="1654796818134" duration="15507000" />
+      <workItem from="1654796818134" duration="21936000" />
     </task>
     <task id="LOCAL-00001" summary="Input Validation, File management, TaskList containment">
       <created>1654809868609</created>
@@ -85,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654809868609</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Working on reading input">
+      <created>1654813356026</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1654813356026</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,6 +114,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Input Validation, File management, TaskList containment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Input Validation, File management, TaskList containment" />
+    <MESSAGE value="Working on reading input" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on reading input" />
   </component>
 </project>

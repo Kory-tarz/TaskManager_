@@ -3,6 +3,13 @@ package pl.cyryl.main;
 import pl.cyryl.colors.ConsoleColors;
 
 import java.util.Scanner;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+
+import static pl.cyryl.main.InputValidator.*;
+import static pl.cyryl.main.InputValidator.ValidationResult.*;
 
 public class InputManager {
 
@@ -12,6 +19,42 @@ public class InputManager {
     public InputManager(){
         quitting = false;
         scanner = new Scanner(System.in);
+    }
+
+    public Task readNewTask() {
+        Task newTask = new Task();
+        String message = "Enter task description: ";
+        readAndValidate(newTask, message, Task.setDescription, isDescriptionValid());
+        message = "Enter date in format YYYY-MM-DD:";
+        readAndValidate(newTask, message, Task.setDueDate, isDateValid());
+        message = "Is this task important? Enter true/false: ";
+        readAndValidate(newTask, message, Task.setImportant, isImportanceValid());
+        return newTask;
+    }
+
+    private void readAndValidate(Task currentTask, String messageForUser, BiConsumer<Task, String> set, Function<Task, InputValidator.ValidationResult> validation){
+        String input;
+        InputValidator.ValidationResult result;
+        do{
+            System.out.println(messageForUser);
+            input = scanner.nextLine();
+            set.accept(currentTask, input);
+            result = validation.apply(currentTask);
+            if (result != SUCCESS) {
+                System.out.println("Error: " + result);
+            }
+        }while (result != SUCCESS);
+    }
+
+
+    public int readIdToRemove() {
+        System.out.println("Enter id to remove a task: ");
+        while (!scanner.hasNextInt()){
+            scanner.nextLine();
+        }
+        int id = scanner.nextInt();
+        scanner.nextLine();
+        return id;
     }
 
     public boolean isWaitingForInput(){
