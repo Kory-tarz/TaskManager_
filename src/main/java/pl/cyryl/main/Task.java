@@ -2,7 +2,7 @@ package pl.cyryl.main;
 
 import java.util.function.BiConsumer;
 
-public class Task {
+public class Task implements Saveable {
 
     private String description;
     private String dueDate;

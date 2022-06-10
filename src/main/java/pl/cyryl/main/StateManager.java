@@ -41,10 +41,10 @@ public class StateManager {
         return new ArrayList<>();
     }
 
-    public void saveOnExit(List<Task> taskList){
+    public void saveOnExit(List<Saveable> elements){
         try(FileWriter fileWriter = new FileWriter(saveFileName, false)){
-            for(Task task: taskList){
-                fileWriter.append(task.saveToFile());
+            for(Saveable element: elements){
+                fileWriter.append(element.saveToFile());
             }
         }catch (IOException exception){
             logger.info("Error: saving tasks to file on exit");
