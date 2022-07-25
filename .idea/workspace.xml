@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f705d118-cb56-4ebf-8a38-9d2cc94c36ad" name="Changes" comment="small fixes. Saveable inteface">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/enums/ValidationResult.java" afterDir="false" />
+    <list default="true" id="f705d118-cb56-4ebf-8a38-9d2cc94c36ad" name="Changes" comment="Final version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/controller/AppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/InputManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/managers/InputManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/InputValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/interfaces/InputValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/managers/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/Saveable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/interfaces/Saveable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/StateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/managers/StateManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/main/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/models/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/controller/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/controller/AppController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/interfaces/InputValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/interfaces/InputValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/interfaces/Saveable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/interfaces/Savable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/managers/InputManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/managers/InputManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/managers/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/managers/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/managers/StateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/managers/StateManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/cyryl/models/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/cyryl/task/Task.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +58,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="pl.cyryl.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pl.cyryl.main.Main" />
       <module name="TaskManager" />
       <extension name="coverage">
@@ -75,7 +73,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.pl.cyryl.main.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -88,7 +86,12 @@
       <option name="presentableId" value="Default" />
       <updated>1654796815932</updated>
       <workItem from="1654796818134" duration="24281000" />
-      <workItem from="1654858507215" duration="3591000" />
+      <workItem from="1654858507215" duration="10467000" />
+      <workItem from="1654935536532" duration="650000" />
+      <workItem from="1655009480643" duration="597000" />
+      <workItem from="1655720530141" duration="723000" />
+      <workItem from="1658734499260" duration="1497000" />
+      <workItem from="1658759335463" duration="643000" />
     </task>
     <task id="LOCAL-00001" summary="Input Validation, File management, TaskList containment">
       <created>1654809868609</created>
@@ -118,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654844725625</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Final version">
+      <created>1654862380434</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1654862380434</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +150,7 @@
     <MESSAGE value="Working on reading input" />
     <MESSAGE value="Program is working as intended. TODO: fix colors on display, make StateManager more general" />
     <MESSAGE value="small fixes. Saveable inteface" />
-    <option name="LAST_COMMIT_MESSAGE" value="small fixes. Saveable inteface" />
+    <MESSAGE value="Final version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final version" />
   </component>
 </project>

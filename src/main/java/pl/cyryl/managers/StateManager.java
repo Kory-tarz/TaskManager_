@@ -1,6 +1,6 @@
 package pl.cyryl.managers;
 
-import pl.cyryl.interfaces.Saveable;
+import pl.cyryl.interfaces.Savable;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -22,7 +22,7 @@ public class StateManager {
         this.saveFileName = saveFileName;
     }
 
-    public void saveTask(Saveable element){
+    public void saveTask(Savable element){
         try (FileWriter fileWriter = new FileWriter(saveFileName, true)) {
             fileWriter.append(element.saveToFile());
         }catch (IOException exception){
@@ -43,9 +43,9 @@ public class StateManager {
         return new ArrayList<>();
     }
 
-    public void saveOnExit(List<? extends Saveable> elements){
+    public void saveOnExit(List<? extends Savable> elements){
         try(FileWriter fileWriter = new FileWriter(saveFileName, false)){
-            for(Saveable element: elements){
+            for(Savable element: elements){
                 fileWriter.append(element.saveToFile());
             }
         }catch (IOException exception){

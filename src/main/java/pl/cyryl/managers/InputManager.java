@@ -2,7 +2,7 @@ package pl.cyryl.managers;
 
 import pl.cyryl.colors.ConsoleColors;
 import pl.cyryl.enums.ValidationResult;
-import pl.cyryl.models.Task;
+import pl.cyryl.task.Task;
 
 import java.util.Scanner;
 import java.util.function.BiConsumer;

@@ -3,7 +3,7 @@ package pl.cyryl.controller;
 import pl.cyryl.colors.ConsoleColors;
 import pl.cyryl.managers.InputManager;
 import pl.cyryl.managers.Manager;
-import pl.cyryl.models.Task;
+import pl.cyryl.task.Task;
 
 public class AppController {
 

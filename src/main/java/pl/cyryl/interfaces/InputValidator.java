@@ -1,7 +1,7 @@
 package pl.cyryl.interfaces;
 
 import org.apache.commons.lang3.StringUtils;
-import pl.cyryl.models.Task;
+import pl.cyryl.task.Task;
 import pl.cyryl.enums.ValidationResult;
 
 import java.time.LocalDate;
@@ -10,6 +10,7 @@ import java.util.function.Function;
 
 import static pl.cyryl.enums.ValidationResult.*;
 
+@FunctionalInterface
 public interface InputValidator extends Function<Task, ValidationResult> {
 
     static InputValidator isDescriptionValid(){

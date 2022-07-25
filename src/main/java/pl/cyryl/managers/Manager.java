@@ -2,7 +2,7 @@ package pl.cyryl.managers;
 
 import pl.cyryl.colors.ConsoleColors;
 import pl.cyryl.enums.ValidationResult;
-import pl.cyryl.models.Task;
+import pl.cyryl.task.Task;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -39,7 +39,7 @@ public class Manager {
     }
 
     public void removeTask(int i){
-        if (i >= taskList.size()) throw new IllegalArgumentException("Index not found");
+        if (i < 0 || i >= taskList.size()) throw new IllegalArgumentException("Index not found");
         taskList.remove(i);
     }
 

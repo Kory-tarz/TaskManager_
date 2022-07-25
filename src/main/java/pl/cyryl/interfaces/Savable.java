@@ -1,5 +1,5 @@
 package pl.cyryl.interfaces;
 
-public interface Saveable {
+public interface Savable {
     public String saveToFile();
 }

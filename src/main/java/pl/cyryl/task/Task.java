@@ -1,10 +1,10 @@
-package pl.cyryl.models;
+package pl.cyryl.task;
 
-import pl.cyryl.interfaces.Saveable;
+import pl.cyryl.interfaces.Savable;
 
 import java.util.function.BiConsumer;
 
-public class Task implements Saveable {
+public class Task implements Savable {
 
     private String description;
     private String dueDate;
